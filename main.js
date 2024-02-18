@@ -23,6 +23,8 @@ function getArt(){
                 console.log(title);
                 let artist = objectInfo.artistDisplayName;
 
+                let objectURL = objectInfo.objectURL;
+
                 const img = new Image();
                 img.src = objectInfo.primaryImage;
 
@@ -41,7 +43,8 @@ function getArt(){
                     document.getElementById('image').innerHTML = `<img src="${imageSmall}" />`
                     document.getElementById('imageButton').innerHTML = `<a href="${imagePrimary}" target="_blank"><p>Click here for larger/zoomable version</a>`
                 } else {
-                    document.getElementById('image').innerHTML = `<img src="${imagePrimary}" />`
+                    document.getElementById('image').innerHTML = `<img src="${imagePrimary}" />`;
+                    document.getElementById('imageButton').innerHTML = "";
                 }
                 }
 
@@ -83,7 +86,7 @@ function getArt(){
                 
                 document.getElementById('title').innerHTML = `<p>${title} (${date})</br>${artist}</p>`;
 
-                document.getElementById('infoHolder').innerHTML = `<h2>WELCOME TO THE MET</h2><p>This website displays a random image from the digital archive of the Metropolitan Museum of Art. Some images may be NSFW or minors.<p>Built by Bill Kowalski of <a href="https://mahonebaywebdesign.com">Mahone Bay Web Design</a>.<H2>ITEM DETAILS</h2><p><strong>TITLE:</strong> ${title}</p><p><strong>ARTIST:</strong> ${artist}</p><p><strong>DATE:</strong> ${date}</p><p><strong>ORIGIN: </strong>${origin}</p><p><strong>MEDIUM: </strong>${medium}</p><p><strong>SOURCE:</strong> ${source}</p><p><strong>DIMENSIONS:</strong> ${dimensions}</p><p><strong>OBJECT ID:</strong> ${objId}`;
+                document.getElementById('infoHolder').innerHTML = `<h2>WELCOME TO THE MET</h2><p>This website displays a random image from the digital archive of the Metropolitan Museum of Art. Some images may be NSFW or minors.<p>Built by Bill Kowalski of <a href="https://mahonebaywebdesign.com">Mahone Bay Web Design</a>.<H2>ITEM DETAILS</h2><p><strong>TITLE:</strong> ${title}</p><p><strong>ARTIST:</strong> ${artist}</p><p><strong>DATE:</strong> ${date}</p><p><strong>ORIGIN: </strong>${origin}</p><p><strong>MEDIUM: </strong>${medium}</p><p><strong>SOURCE:</strong> ${source}</p><p><strong>DIMENSIONS:</strong> ${dimensions}</p><p><strong>OBJECT ID:</strong> <a href="https://www.metmuseum.org/art/collection/search/346306">${objId}"</a>`;
                 
             }
             })
